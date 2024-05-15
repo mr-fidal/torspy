@@ -45,6 +45,40 @@ torspy http://example.onion -s file.html -d /path/to/directory
 torspy --help
 ```
 
+### Additional Examples
+
+- Display the content of a .onion site and search for "important information", saving the results to a file named `results.html` in the specified directory:
+```
+torspy http://example.onion --find "important information" -s results.html -d /path/to/directory
+```
+
+- Save the entire HTML content of a .onion site to a file named `full_content.html` in the current directory:
+```
+torspy http://example.onion -s full_content.html
+```
+
+- Display the content of a .onion site and save it to a file named `output.txt` in the current directory:
+```
+torspy http://example.onion -s output.txt
+```
+
+### Using torspy in a Bash Script
+
+You can incorporate torspy into your Bash scripts for automated tasks. Here's an example script that fetches content from a list of .onion URLs and saves it to individual files:
+
+```bash
+#!/bin/bash
+
+# List of .onion URLs
+urls=("http://example1.onion" "http://example2.onion" "http://example3.onion")
+
+# Loop through each URL
+for url in "${urls[@]}"; do
+    # Fetch content and save to a file
+    torspy "$url" -s "${url##*/}.html"
+done
+```
+
 ### Contributing
 
 If you encounter any issues or have suggestions for improvements, feel free to open an issue or submit a pull request on GitHub.
@@ -78,3 +112,4 @@ If you're interested in contributing to torspy, you can:
 - Report issues encountered while using torspy.
 - Suggest new features or enhancements.
 - Submit pull requests with improvements or fixes.
+- 
