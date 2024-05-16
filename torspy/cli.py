@@ -1,11 +1,16 @@
 #!/usr/bin/python3
-# copyright ©️ 2024 author Fidal 
+# copyright ©️ 2024 author Fidal
 
 import argparse
 from .scraper import scrape_onion_site
 
 def main():
-    parser = argparse.ArgumentParser(prog='torspy', description='Tor onion site scraping tool')
+   epilog_text = '''
+Copyright (©️) 2024 author: Fidal
+Issue: https://GitHub.com/mr-fidal/torspy
+'''
+    parser = argparse.ArgumentParser(description='Scrape a .onion site.', epilog=epilog_text,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('url', type=str, help='The .onion site URL to scrape')
     parser.add_argument('--find', type=str, help='The text to search for within the site')
     parser.add_argument('-s', '--save', type=str, help='The file name to save the content')
@@ -15,4 +20,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-  
