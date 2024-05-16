@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name='torspy',
-    version='0.1',
+    version='0.3',
     author='Fidal',
     author_email='mrfidal@proton.me',
     description='Tor onion site scraping tool',
