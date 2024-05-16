@@ -1,3 +1,3 @@
-from .scraper import scrape_onion_site
-
-__all__ = ['scrape_onion_site']
+#!/usr/bin/python3
+# copyright ©️ 2024 author : fidal 
+__version__ = '0.1'
