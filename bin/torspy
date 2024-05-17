@@ -5,17 +5,23 @@ const { scrapeOnionSite } = require('../lib/scrape');
 const { findDirectories } = require('../lib/directories');
 const { findSubdomains } = require('../lib/subdomains');
 
+const description = `
+torspy is a robust Python package fortified with powerful algorithms, designed for seamless exploration of .onion sites via the Tor network. Its arsenal includes adept scraping of HTML from .onion URLs, precise text localization within the acquired content, and proficient storage of findings. Moreover, torspy boasts formidable subdomain scanning capabilities, enabling thorough reconnaissance across diverse subdomains. Additionally, it excels at detecting hidden directories, further enhancing its efficacy in navigating and extracting valuable information from the depths of the dark web.
+
+Copyright (c) 2024 author: Fidal
+Report an Issue: https://github.com/mr-fidal/torspy/issues
+`;
+
 program
   .version('1.0.0')
-  .description('Scrape and analyze .onion sites')
+  .description(description)
   .option('-u, --url <url>', 'The .onion site URL to scrape')
   .option('-f, --find <text>', 'The text to search for within the site')
   .option('-s, --save <file>', 'The file name to save the content')
   .option('-d, --directory <dir>', 'The directory to save the file')
   .option('--dir <file>', 'File with directories list to check')
-  .option('--sub <file>', 'File with subdomains list to check');
-
-program.parse(process.argv);
+  .option('--sub <file>', 'File with subdomains list to check')
+  .parse(process.argv);
 
 const options = program.opts();
 
