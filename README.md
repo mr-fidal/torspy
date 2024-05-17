@@ -38,6 +38,8 @@ torspy http://example.onion -s file.html -d /path/to/directory
 - The `-d` flag followed by the directory path indicates where to save the file.
 #### Message 
 - important <b>Remember that when trying to find subdomains, as well as trying to find directories, the success rate is only 20%.</b>
+- Finding directories and subdomains for onion sites is more challenging than for regular websites because onion sites are part of the dark web, which is intentionally designed to be less accessible and more private.
+#### Subdomain and Directories
 - To check for directories listed in a file:
 ```sh
 torspy http://example.onion --dir directories.txt
