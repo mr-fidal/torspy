@@ -17,7 +17,7 @@ def check_tor_running():
         if "Congratulations. This browser is configured to use Tor." not in response.text:
             raise Exception("Tor is not properly configured.")
     except Exception as e:
-        print("Error: Tor is not running or not properly configured. Please start Tor and try again.")
+        print("Error : Tor is not running or not properly configured. Please start Tor and try again.")
         sys.exit(1)
 
 def check_onion_site(url):
