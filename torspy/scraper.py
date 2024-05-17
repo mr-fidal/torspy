@@ -174,7 +174,7 @@ def find_subdomains(url, sub_file, save_file=None, save_directory=None):
         test_url = f"http://{subdomain}.{base_url}"
         try:
             response = session.get(test_url, timeout=60)
-            if response.status_code == 200:
+            if response.status_code == 200 and ("index.html" in response.text or "index.php" in response.text):
                 found_subdomains.append(test_url)
                 print(f"Found: {test_url}")
         except requests.RequestException:
@@ -198,3 +198,4 @@ def find_subdomains(url, sub_file, save_file=None, save_directory=None):
                 print(f"Error saving the file: {e}")
     else:
         print("\nNo subdomains found.")
+    
