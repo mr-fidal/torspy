@@ -17,7 +17,7 @@ def check_tor_running():
         if "Congratulations. This browser is configured to use Tor." not in response.text:
             raise Exception("Tor is not properly configured.")
     except Exception as e:
-        print("Error : Tor is not running or not properly configured. Please start Tor and try again.")
+        print("Error: Tor is not running or not properly configured. Please start Tor and try again.")
         sys.exit(1)
 
 def check_onion_site(url):
@@ -122,25 +122,24 @@ def find_directories(url, dir_file, save_file=None, save_directory=None):
         try:
             response = session.get(test_url, timeout=60)
             if response.status_code == 200 and (
-                "index.html" in response.text or "index.php" in response.text or
-                "login.html" in response.text or "login.php" in response.text or
-                "home.html" in response.text or "home.php" in response.text or
-                "main.html" in response.text or "main.php" in response.text or
-                "about.html" in response.text or "contact.html" in response.text or
-                "contact.php" in response.text or "form.html" in response.text or
-                "form.php" in response.text or "register.html" in response.text or
-                "register.php" in response.text or "signup.html" in response.text or
-                "signup.php" in response.text or "dashboard.html" in response.text or
-                "dashboard.php" in response.text or "admin.html" in response.text or
-                "admin.php" in response.text or "logout.html" in response.text or
-                "404.html" in response.text or "style.css" in response.text or
-                "styles.css" in response.text or "script.js" in response.text or
-                "database.db" in response.text or "app.db" in response.text or
-                "main.db" in response.text or "web.db" in response.text or
-                "users.db" in response.text or "web.db" in response.text or
+                "index.html" in response.text or "index.php" in response.text or 
+                "login.html" in response.text or "login.php" in response.text or 
+                "home.html" in response.text or "home.php" in response.text or 
+                "main.html" in response.text or "main.php" in response.text or 
+                "about.html" in response.text or "contact.html" in response.text or 
+                "contact.php" in response.text or "form.html" in response.text or 
+                "form.php" in response.text or "register.html" in response.text or 
+                "register.php" in response.text or "signup.html" in response.text or 
+                "signup.php" in response.text or "dashboard.html" in response.text or 
+                "dashboard.php" in response.text or "admin.html" in response.text or 
+                "admin.php" in response.text or "logout.html" in response.text or 
+                "404.html" in response.text or "style.css" in response.text or 
+                "styles.css" in response.text or "script.js" in response.text or 
+                "database.db" in response.text or "app.db" in response.text or 
+                "main.db" in response.text or "web.db" in response.text or 
+                "users.db" in response.text or "web.db" in response.text or 
                 "customer.db" in response.text or "inventory.db" in response.text
             ):
-
 
                 found_directories.append(test_url)
                 print(f"Found: {test_url}")
@@ -196,22 +195,22 @@ def find_subdomains(url, sub_file, save_file=None, save_directory=None):
         try:
             response = session.get(test_url, timeout=60)
             if response.status_code == 200 and (
-                "index.html" in response.text or "index.php" in response.text or
-                "login.html" in response.text or "login.php" in response.text or
-                "home.html" in response.text or "home.php" in response.text or
-                "main.html" in response.text or "main.php" in response.text or
-                "about.html" in response.text or "contact.html" in response.text or
-                "contact.php" in response.text or "form.html" in response.text or
-                "form.php" in response.text or "register.html" in response.text or
-                "register.php" in response.text or "signup.html" in response.text or
-                "signup.php" in response.text or "dashboard.html" in response.text or
-                "dashboard.php" in response.text or "admin.html" in response.text or
-                "admin.php" in response.text or "logout.html" in response.text or
-                "404.html" in response.text or "style.css" in response.text or
-                "styles.css" in response.text or "script.js" in response.text or
-                "database.db" in response.text or "app.db" in response.text or
-                "main.db" in response.text or "web.db" in response.text or
-                "users.db" in response.text or "web.db" in response.text or
+                "index.html" in response.text or "index.php" in response.text or 
+                "login.html" in response.text or "login.php" in response.text or 
+                "home.html" in response.text or "home.php" in response.text or 
+                "main.html" in response.text or "main.php" in response.text or 
+                "about.html" in response.text or "contact.html" in response.text or 
+                "contact.php" in response.text or "form.html" in response.text or 
+                "form.php" in response.text or "register.html" in response.text or 
+                "register.php" in response.text or "signup.html" in response.text or 
+                "signup.php" in response.text or "dashboard.html" in response.text or 
+                "dashboard.php" in response.text or "admin.html" in response.text or 
+                "admin.php" in response.text or "logout.html" in response.text or 
+                "404.html" in response.text or "style.css" in response.text or 
+                "styles.css" in response.text or "script.js" in response.text or 
+                "database.db" in response.text or "app.db" in response.text or 
+                "main.db" in response.text or "web.db" in response.text or 
+                "users.db" in response.text or "web.db" in response.text or 
                 "customer.db" in response.text or "inventory.db" in response.text
             ):
 
@@ -231,7 +230,7 @@ def find_subdomains(url, sub_file, save_file=None, save_directory=None):
             else:
                 save_path = save_file
             try:
-                with open(save_path, 'w', encoding='utf-8') as file):
+                with open(save_path, 'w', encoding='utf-8') as file:
                     file.write('\n'.join(found_subdomains))
                 print(f"Found subdomains saved to {save_path}")
             except IOError as e:
