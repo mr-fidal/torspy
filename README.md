@@ -37,24 +37,12 @@ torspy http://example.onion -s file.html -d /path/to/directory
 ```
 - The `-d` flag followed by the directory path indicates where to save the file.
 
-- To use a custom proxy for the requests:
-```sh
-torspy http://example.onion --proxy socks5h://127.0.0.1:9050
-```
-- The `--proxy` flag followed by the proxy URL specifies the proxy to use for the requests.
-
-- To use a custom User-Agent for the requests:
-```sh
-torspy http://example.onion --user-agent "CustomUserAgent/1.0"
-```
-- The `--user-agent` flag followed by the User-Agent string specifies the User-Agent to use for the requests.
 - To check for directories listed in a file:
 ```sh
-torspy http://example.onion --directories directories.txt
+torspy http://example.onion --dir directories.txt
 ```
-- The `--directories` flag followed by the file name checks for directories listed in the specified file.
+- The `--dir` flag followed by the file name checks for directories listed in the specified file.
 
-- If no file is provided, the default directories-list.txt file will be used.
 - For more information on available options, you can use the `--help` flag:
 ```sh
 torspy --help
@@ -71,14 +59,6 @@ torspy http://example.onion -s full_content.html
 - Display the content of a .onion site and save it to a file named `output.txt` in the current directory:
 ```sh
 torspy http://example.onion -s output.txt
-```
-- Display the content of a .onion site using a custom proxy:
-```sh
-torspy http://example.onion --proxy socks5h://127.0.0.1:9050
-```
-- Display the content of a .onion site using a custom User-Agent:
-```sh
-torspy http://example.onion --user-agent "CustomUserAgent/1.0"
 ```
 ### Using torspy in a Bash Script
 - You can incorporate torspy into your Bash scripts for automated tasks. Here's an example script that fetches content from a list of .onion URLs and saves it to individual files:
