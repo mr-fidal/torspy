@@ -52,7 +52,7 @@ torspy http://example.onion --user-agent "CustomUserAgent/1.0"
 ```sh
 torspy http://example.onion --directories directories.txt
 ```
-- The --directories flag followed by the file name checks for directories listed in the specified file.
+- The `--directories` flag followed by the file name checks for directories listed in the specified file.
 
 - If no file is provided, the default directories-list.txt file will be used.
 - For more information on available options, you can use the `--help` flag:
