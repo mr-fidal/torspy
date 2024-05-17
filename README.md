@@ -36,7 +36,8 @@ torspy http://example.onion --find "search query" -s search_results.html
 torspy http://example.onion -s file.html -d /path/to/directory
 ```
 - The `-d` flag followed by the directory path indicates where to save the file.
-
+#### Message 
+- important <b>Remember that when trying to find subdomains, as well as trying to find directories, the success rate is only 20%.</b>
 - To check for directories listed in a file:
 ```sh
 torspy http://example.onion --dir directories.txt
