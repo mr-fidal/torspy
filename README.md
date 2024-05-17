@@ -48,7 +48,13 @@ torspy http://example.onion --proxy socks5h://127.0.0.1:9050
 torspy http://example.onion --user-agent "CustomUserAgent/1.0"
 ```
 - The `--user-agent` flag followed by the User-Agent string specifies the User-Agent to use for the requests.
+- To check for directories listed in a file:
+```sh
+torspy http://example.onion --directories directories.txt
+```
+- The --directories flag followed by the file name checks for directories listed in the specified file.
 
+- If no file is provided, the default directories-list.txt file will be used.
 - For more information on available options, you can use the `--help` flag:
 ```sh
 torspy --help
