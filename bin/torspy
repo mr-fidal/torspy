@@ -1,0 +1,33 @@
+#!/usr/bin/env node
+
+const { program } = require('commander');
+const { scrapeOnionSite } = require('../lib/scrape');
+const { findDirectories } = require('../lib/directories');
+const { findSubdomains } = require('../lib/subdomains');
+
+program
+  .version('1.0.0')
+  .description('Scrape and analyze .onion sites')
+  .option('-u, --url <url>', 'The .onion site URL to scrape')
+  .option('-f, --find <text>', 'The text to search for within the site')
+  .option('-s, --save <file>', 'The file name to save the content')
+  .option('-d, --directory <dir>', 'The directory to save the file')
+  .option('--dir <file>', 'File with directories list to check')
+  .option('--sub <file>', 'File with subdomains list to check');
+
+program.parse(process.argv);
+
+const options = program.opts();
+
+if (!options.url) {
+  console.error('URL is required');
+  process.exit(1);
+}
+
+if (options.dir) {
+  findDirectories(options.url, options.dir, options.save, options.directory);
+} else if (options.sub) {
+  findSubdomains(options.url, options.sub, options.save, options.directory);
+} else {
+  scrapeOnionSite(options.url, options.find, options.save, options.directory);
+}
