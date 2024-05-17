@@ -1,6 +1,6 @@
 # torspy
 
-<b>torspy</b> is a Python package for scraping .onion sites via the Tor network. It provides a simple interface to fetch HTML from .onion URLs, search for specific text within the content, and save results to a file. Additionally, torspy can detect hidden directories, making it a valuable tool for navigating and extracting information from the dark web.
+<b>torspy</b> is a robust Python package fortified with powerful algorithms, designed for seamless exploration of .onion sites via the Tor network. Its arsenal includes adept scraping of HTML from .onion URLs, precise text localization within the acquired content, and proficient storage of findings. Moreover, torspy boasts formidable subdomain scanning capabilities, enabling thorough reconnaissance across diverse subdomains. Additionally, it excels at detecting hidden directories, further enhancing its efficacy in navigating and extracting valuable information from the depths of the dark web.
 
 ## Installation
 
