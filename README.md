@@ -44,8 +44,9 @@ torspy http://example.onion --dir directories.txt
 - The `--dir` flag followed by the file name checks for directories listed in the specified file.
 - Move it all to another file
 ```sh
-torspy http://example.onion --dir directories.txt -s output.txt
+torspy http://example.onion --dir directories-list.txt -s output.txt
 ```
+- This command performs directories scanning on the .onion site using the list of directories provided in the directories-list.txt file.
 - For subdomain scanning:
 ```sh
 torspy http://example.onion --sub subdomain-list.txt  -s output.txt
