@@ -42,7 +42,10 @@ torspy http://example.onion -s file.html -d /path/to/directory
 torspy http://example.onion --dir directories.txt
 ```
 - The `--dir` flag followed by the file name checks for directories listed in the specified file.
-
+- Move it all to another file
+```sh
+torspy http://example.onion --dir directories.txt -s output.txt
+```
 - For more information on available options, you can use the `--help` flag:
 ```sh
 torspy --help
