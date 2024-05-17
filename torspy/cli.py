@@ -6,7 +6,7 @@ from .scraper import scrape_onion_site
 
 def main():
     epilog_text = '''
-Copyright (c) 2024 author: Fidal
+Copyright (©️) 2024 author: Fidal
 Issue: https://GitHub.com/mr-fidal/torspy
 '''
     parser = argparse.ArgumentParser(description='Scrape a .onion site.', epilog=epilog_text,
@@ -17,8 +17,9 @@ Issue: https://GitHub.com/mr-fidal/torspy
     parser.add_argument('-d', '--directory', type=str, help='The directory to save the file')
     parser.add_argument('--proxy', type=str, help='The proxy server to use')
     parser.add_argument('--user-agent', type=str, help='The User-Agent string to use')
+    parser.add_argument('--directories', type=str, help='File containing directories to check')
     args = parser.parse_args()
-    scrape_onion_site(args.url, args.find, args.save, args.directory, args.proxy, args.user_agent)
+    scrape_onion_site(args.url, args.find, args.save, args.directory, args.proxy, args.user_agent, args.directories)
 
 if __name__ == "__main__":
     main()
