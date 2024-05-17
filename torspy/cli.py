@@ -2,7 +2,7 @@
 # copyright ©️ 2024 author Fidal
 
 import argparse
-from .scraper import scrape_onion_site
+from .scraper import scrape_onion_site, find_directories
 
 def main():
     epilog_text = '''
@@ -15,11 +15,13 @@ Issue: https://GitHub.com/mr-fidal/torspy
     parser.add_argument('--find', type=str, help='The text to search for within the site')
     parser.add_argument('-s', '--save', type=str, help='The file name to save the content')
     parser.add_argument('-d', '--directory', type=str, help='The directory to save the file')
-    parser.add_argument('--proxy', type=str, help='The proxy server to use')
-    parser.add_argument('--user-agent', type=str, help='The User-Agent string to use')
-    parser.add_argument('--directories', type=str, help='File containing directories to check')
+    parser.add_argument('--dir', type=str, help='File with list of directories to check')
     args = parser.parse_args()
-    scrape_onion_site(args.url, args.find, args.save, args.directory, args.proxy, args.user_agent, args.directories)
+    
+    if args.dir:
+        find_directories(args.url, args.dir, args.save, args.directory)
+    else:
+        scrape_onion_site(args.url, args.find, args.save, args.directory)
 
 if __name__ == "__main__":
     main()
