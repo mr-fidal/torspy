@@ -6,8 +6,8 @@ from .scraper import scrape_onion_site, find_directories
 
 def main():
     epilog_text = '''
-Copyright (©️) 2024 author: Fidal
-Issue: https://GitHub.com/mr-fidal/torspy
+Copyright (c) 2024 Author: Fidal
+Report an Issue : https://github.com/mr-fidal/torspy/issues
 '''
     parser = argparse.ArgumentParser(description='Scrape a .onion site.', epilog=epilog_text,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
