@@ -50,6 +50,7 @@ torspy http://example.onion --dir directories.txt -s output.txt
 ```sh
 torspy http://example.onion --sub subdomain-list.txt  -s output.txt
 ```
+- This command performs subdomain scanning on the .onion site using the list of subdomains provided in the `subdomain-list.txt` file.
 - For more information on available options, you can use the `--help` flag:
 ```sh
 torspy --help
