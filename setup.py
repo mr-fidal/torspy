@@ -28,4 +28,20 @@ setup(
         'Operating System :: OS Independent',
     ],
     python_requires='>=3.6',
+    keywords=[
+        'mrfidal',
+        'tor',
+        'DarkWeb',
+        'onion',
+        'torspy',
+        'scraping',
+        'dark web',
+        'web scraping',
+        'hidden services',
+        'privacy',
+        'security',
+        'beautifulsoup4',
+        'requests',
+        'python'
+    ],
 )
