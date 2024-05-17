@@ -122,7 +122,7 @@ def find_directories(url, dir_file, save_file=None, save_directory=None):
         test_url = os.path.join(url, directory)
         try:
             response = session.get(test_url, timeout=60)
-            if response.status_code == 200 and ("index.html" in response.text or "index.php" in response.text):
+            if response.status_code == 200 and ("index.html" in response.text or "index.php" in response.text or "login.html" in response.text or "login.php" in response.text or "home.html" in response.text or "home.php" in response.text or "main.html" in response.text or "main.php" in response.text or "about.html" in response.text or "contact.html" in response.text "contact.php" in response.text or "form.html" in response.text or "form.php" in response.text or "register.html" in response.text or "register.php" in response.text or "signup.html" in response.text or "signup.php" in response.text or "dashboard.html" in response.text or "dashboard.php" in response.text or "admin.html" in response.text or "admin.php" in response.text or "logout.html" in response.text or "404.html" in response.text or "style.css" in response.text or "styles.css" in response.text or "script.js" in response.text or "database.db" in response.text or "app.db" in response.text or "main.db" in response.text or "web.db" in response.text or "users.db" in response.text or "web.db" in response.text):
                 found_directories.append(test_url)
                 print(f"Found: {test_url}")
         except requests.RequestException:
