@@ -46,6 +46,10 @@ torspy http://example.onion --dir directories.txt
 ```sh
 torspy http://example.onion --dir directories.txt -s output.txt
 ```
+- For subdomain scanning:
+```sh
+torspy http://example.onion --sub subdomain-list.txt  -s output.txt
+```
 - For more information on available options, you can use the `--help` flag:
 ```sh
 torspy --help
