@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 
-def example_utility_function():
-    print("This is an example utility function.")
+def mr_fidal():
+    print("My heartfelt thanks to all who are using this tool of mine ❤️")
