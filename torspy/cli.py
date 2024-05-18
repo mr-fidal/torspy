@@ -9,7 +9,6 @@ from .scraper.services import detect_services
 from .scraper.links import extract_links
 from .scraper.analyze import analyze_content
 from .scraper.download import download_files
-from .scraper.screenshot import capture_screenshot
 
 def main():
     epilog_text = '''
@@ -29,8 +28,7 @@ Report an Issue : https://github.com/mr-fidal/torspy/issues
     parser.add_argument('--links', action='store_true', help='Extract all links from the onion site')
     parser.add_argument('--analyze', action='store_true', help='Analyze the content of the onion site')
     parser.add_argument('--download', type=str, help='Download specific types of files from the onion site')
-    parser.add_argument('--screenshot', type=str, help='Capture a screenshot of the onion site')
-
+    
     args = parser.parse_args()
 
     if args.dir:
