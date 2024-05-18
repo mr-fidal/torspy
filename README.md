@@ -77,6 +77,7 @@ torspy http://example.onion –find “important information” -s results.html 
 ```sh
 torspy http://example.onion --dir directories-list.txt
 ```
+- <b>This process may take some time</b>
 -	If you run the command above it will search for directories from the onion sites you provided
 
 -	The command --dir stands for directories
@@ -97,6 +98,7 @@ torspy http://example.onion –dir directories-list.txt -s output.txt
 ```sh
 torspy http://example.onion –sub subdomain-list.txt
 ```
+- <b>This process may take some time</b>
 -	If you run the command above it will search for subdomains from the onion sites you provided
 
 -	The command –sub stands for subdomains 
