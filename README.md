@@ -70,8 +70,6 @@ torspy http://example.onion –find “important information” -s results.html 
 - important <b>Remember that when trying to find subdomains, as well as trying to find directories, the success rate is only 20%.</b>
 - Finding directories and subdomains for onion sites is more challenging than for regular websites because onion sites are part of the dark web, which is intentionally designed to be less accessible and more private.
 
-`Important : { Finding directories and subdomains for onion sites is more challenging than for regular websites because onion sites are part of the dark web, which is intentionally designed to be less accessible and more private. } `
-
 <b>command 7</b>
 
 -	Command that finds the directories on the onion site
