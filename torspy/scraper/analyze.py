@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+# Copyright (©️) 2024 author: Fidal
+# Issue : https://github.com/mr-fidal/torspy
+
 import requests
 from bs4 import BeautifulSoup
 from collections import Counter
