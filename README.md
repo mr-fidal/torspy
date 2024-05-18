@@ -2,6 +2,8 @@
 
 <b>torspy</b> is a robust Python package fortified with powerful algorithms, designed for seamless exploration of .onion sites via the Tor network. Its arsenal includes adept scraping of HTML from .onion URLs, precise text localization within the acquired content, and proficient storage of findings. Moreover, torspy boasts formidable subdomain scanning capabilities, enabling thorough reconnaissance across diverse subdomains. Additionally, it excels at detecting hidden directories, further enhancing its efficacy in navigating and extracting valuable information from the depths of the dark web.
 
+<i>After waiting for a few days more commands will be added</i>
+
 ## Installation
 
 You can install torspy via pip:
@@ -50,57 +52,76 @@ torspy http://example.onion –find “search query”
 
 -	The command --find means to search
 
-<!--
-- The `--find` flag followed by the search query indicates searching for specific text.
-
-- The `-s` flag followed by the file name indicates saving the search results.
--->
-- To save the content to a specified directory:
+<b>command 5</b>
+- -	To search for specific text within the content and save the results to a file
 ```sh
-torspy http://example.onion -s file.html -d /path/to/directory
+torspy http://example.onion –find “search query” -s search_results.html
 ```
-- The `-d` flag followed by the directory path indicates where to save the file.
+-	If you enter the above command it will search for the content you need from the site you provided and then transfer all that content to another file.
+
+<b>command 6</b>
+-	How to search for content and move it to another directory
+```sh
+torspy http://example.onion –find “important information” -s results.html -d /path/to/directory
+```
+-	If you run the above command it will search for the content you need from the given onion site and then move it to a file and then move it to the directory you specified.
+
 ### Message 
 - important <b>Remember that when trying to find subdomains, as well as trying to find directories, the success rate is only 20%.</b>
 - Finding directories and subdomains for onion sites is more challenging than for regular websites because onion sites are part of the dark web, which is intentionally designed to be less accessible and more private.
-#### Subdomain and Directories
-- To check for directories listed in a file:
-```sh
-torspy http://example.onion --dir directories.txt
-```
-- The `--dir` flag followed by the file name checks for directories listed in the specified file.
-- Move it all to another file
-```sh
-torspy http://example.onion --dir directories-list.txt -s output.txt
-```
-- This command performs directories scanning on the .onion site using the list of directories provided in the `directories-list.txt` file.
-- For subdomain scanning:
-```sh
-torspy http://example.onion --sub subdomain-list.txt
-```
-The `--sub` flag followed by the file name checks for subdomains listed in the specified file.
 
+`Important : { Finding directories and subdomains for onion sites is more challenging than for regular websites because onion sites are part of the dark web, which is intentionally designed to be less accessible and more private. } `
+
+<b>command 7</b>
+
+-	Command that finds the directories on the onion site
 ```sh
-torspy http://example.onion --sub subdomain-list.txt -s output.txt
+torspy http://example.onion --dir directories-list.txt
 ```
-- This command performs subdomain scanning on the .onion site using the list of subdomains provided in the `subdomain-list.txt` file.
+-	If you run the command above it will search for directories from the onion sites you provided
+
+-	The command --dir stands for directories
+
+-	This command performs directories scanning on the .onion site using the list of directories provided in the `directories-list.txt` file.
+
+<b>command 8</b>
+-	How to move all the lists of directories you got into another file
+```sh
+torspy http://example.onion –dir directories-list.txt -s output.txt
+```
+-	If you run the above command all the directory lists you get will be moved to another file
+
+-	Also you can move this file to other directory or other path using -d command
+
+<b>command 9</b>
+- Command that finds subdomains in onion site
+```sh
+torspy http://example.onion –sub subdomain-list.txt
+```
+-	If you run the command above it will search for subdomains from the onion sites you provided
+
+-	The command –sub stands for subdomains 
+
+-	This command performs subdomains scanning on the .onion site using the list of subdomains provided in the `subdomains-list.txt` file.
+
+<b>command 10</b>
+-	How to move all the lists of subdomains you got into another file
+```sh
+torspy http://example.onion –sub subdomain-list.txt -s output.txt
+```
+-	If you run the above command all the subdomains lists you get will be moved to 
+
+-	another file
+
+-	Also you can move this file to other directory or other path using -d command
+-	
+<b>command 11</b>
+
 - For more information on available options, you can use the `--help` flag:
 ```sh
 torspy --help
 ```
-### Additional Examples
-- Display the content of a .onion site and search for "important information", saving the results to a file named `results.html` in the specified directory:
-```sh
-torspy http://example.onion --find "important information" -s results.html -d /path/to/directory
-```
-- Save the entire HTML content of a .onion site to a file named `full_content.html` in the current directory:
-```sh
-torspy http://example.onion -s full_content.html
-```
-- Display the content of a .onion site and save it to a file named `output.txt` in the current directory:
-```sh
-torspy http://example.onion -s output.txt
-```
+
 ### Using torspy in a Bash Script
 - You can incorporate torspy into your Bash scripts for automated tasks. Here's an example script that fetches content from a list of .onion URLs and saves it to individual files:
 ```sh
