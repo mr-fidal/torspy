@@ -4,6 +4,7 @@
 
 <i>After waiting for a few days more commands will be added</i>
 
+<b>When using torspy tool you must use Tor otherwise it won't work : $ tor</b>
 ## Installation
 
 You can install torspy via pip:
