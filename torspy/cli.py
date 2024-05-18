@@ -9,7 +9,6 @@ from .scraper.services import detect_services
 from .scraper.links import extract_links
 from .scraper.analyze import analyze_content
 from .scraper.download import download_files
-from .scraper.screenshot import capture_screenshot
 
 def main():
     epilog_text = '''
