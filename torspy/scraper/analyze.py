@@ -2,13 +2,14 @@
 # Copyright (©️) 2024 author: Fidal
 # Issue : https://github.com/mr-fidal/torspy
 
+import os
 import requests
 from bs4 import BeautifulSoup
 from collections import Counter
 from .tor_check import check_tor_running
 from .html_extract import check_onion_site
 
-def analyze_content(url):
+def analyze_content(url, save_file=None, save_directory=None):
     check_tor_running()
     site_exists, message = check_onion_site(url)
     if not site_exists:
@@ -33,7 +34,19 @@ def analyze_content(url):
     words = text.split()
     word_count = Counter(words)
 
-    print("Word frequencies:")
-    for word, count in word_count.most_common():
-        print(f"{word}: {count}")
-  
+    result = "\n".join([f"{word}: {count}" for word, count in word_count.items()])
+
+    if save_file:
+        if save_directory:
+            save_path = os.path.join(save_directory, save_file)
+        else:
+            save_path = save_file
+        try:
+            with open(save_path, 'w', encoding='utf-8') as file:
+                file.write(result)
+            print(f"Analysis saved to {save_path}")
+        except IOError as e:
+            print(f"Error saving the file: {e}")
+    else:
+        print(result)
+    
