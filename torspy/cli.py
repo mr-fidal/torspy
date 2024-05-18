@@ -18,10 +18,6 @@ Copyright (c) 2024 author: Fidal
 Report an Issue : https://github.com/mr-fidal/torspy/issues
     '''
     
-    epilog_text = '''
-Copyright (©️) 2024 author: Fidal
-Issue: https://GitHub.com/mr-fidal/torspy
-'''
     parser = argparse.ArgumentParser(description='Scrape a .onion site.', epilog=epilog_text,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('url', type=str, help='The .onion site URL to scrape')
