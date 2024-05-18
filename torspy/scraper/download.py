@@ -9,7 +9,7 @@ from urllib.parse import urljoin
 from .tor_check import check_tor_running
 from .html_extract import check_onion_site
 
-def download_files(url, file_type, save_directory=None):
+def download_content(url, save_directory=None):
     check_tor_running()
     site_exists, message = check_onion_site(url)
     if not site_exists:
@@ -30,21 +30,32 @@ def download_files(url, file_type, save_directory=None):
         return
 
     soup = BeautifulSoup(response.text, 'html.parser')
-    files = [urljoin(url, a['href']) for a in soup.find_all('a', href=True) if a['href'].endswith(file_type)]
+    links = soup.find_all('a', href=True)
 
-    if not save_directory:
-        save_directory = os.getcwd()
+    downloaded_files = []
+    for link in links:
+        file_url = urljoin(url, link['href'])
+        file_name = os.path.basename(file_url)
 
-    os.makedirs(save_directory, exist_ok=True)
+        if save_directory:
+            save_path = os.path.join(save_directory, file_name)
+        else:
+            save_path = file_name
 
-    for file_url in files:
         try:
             file_response = session.get(file_url, timeout=60)
             file_response.raise_for_status()
-            file_name = os.path.join(save_directory, os.path.basename(file_url))
-            with open(file_name, 'wb') as file:
+            with open(save_path, 'wb') as file:
                 file.write(file_response.content)
-            print(f"Downloaded: {file_name}")
+            downloaded_files.append(save_path)
+            print(f"Downloaded: {save_path}")
         except requests.RequestException as e:
-            print(f"Error downloading {file_url}: {e}")
-  
+            print(f"Error downloading the file {file_name}: {e}")
+
+    if downloaded_files:
+        print("\nDownloaded files:")
+        for file in downloaded_files:
+            print(file)
+    else:
+        print("\nNo files were downloaded.")
+        
