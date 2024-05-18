@@ -2,8 +2,6 @@
 # Copyright (©️) 2024 author: Fidal
 # Issue: https://github.com/mr-fidal/torspy
 
-# torspy/scraper/subdomains.py
-
 import os
 import requests
 from .tor_check import check_tor_running
