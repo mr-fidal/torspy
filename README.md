@@ -13,24 +13,48 @@ pip install torspy
 ### Command-Line Interface
 torspy allows you to interact with .onion sites from the command line:
 
+<b>Command 1</b>
 - To display the content of a .onion site:
 ```sh
 torspy http://example.onion
 ```
+-	When the above command is run, a request goes through the Tor network to that onion site, and then the HTML page of the onion site is displayed on your terminal.
+
+<b>command 2</b>
 - To save the displayed content to a file:
 ```sh
 torspy http://example.onion -s file.html
 ```
-- The `-s` flag indicates saving, and you can specify any file name.
+-	The -s flag indicates saving, and you can specify any file name. 
 
-- To search for specific text within the content and save the results to a file:
+-	The above command transfers the entire HTML code that were printed on your terminal to another file 
+
+-	Also you can change the name of file.html to any name of your choice
+
+<b>command 3</b>
+
+- How to move this file to a directory of your choice
 ```sh
-torspy http://example.onion --find "search query" -s search_results.html
+torspy http://example.onion -s file.html -d /path/home/
 ```
+-	-d stands for directory 
+
+-	Given after -d is your path and if you run the above command your file will move to the given path
+
+<b>command 4</b>
+-	Search only the content you need from Onion sites
+```sh
+torspy http://example.onion –find “search query”
+```
+-	If you enter the above command it will search only the content you need from the given onion site and print it. 
+
+-	The command --find means to search
+
+<!--
 - The `--find` flag followed by the search query indicates searching for specific text.
 
 - The `-s` flag followed by the file name indicates saving the search results.
-
+-->
 - To save the content to a specified directory:
 ```sh
 torspy http://example.onion -s file.html -d /path/to/directory
