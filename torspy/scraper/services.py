@@ -2,12 +2,13 @@
 # Copyright (©️) 2024 author: Fidal
 # Issue : https://github.com/mr-fidal/torspy
 
+import os
 import requests
 from bs4 import BeautifulSoup
 from .tor_check import check_tor_running
 from .html_extract import check_onion_site
 
-def detect_services(url):
+def extract_services(url, save_file=None, save_directory=None):
     check_tor_running()
     site_exists, message = check_onion_site(url)
     if not site_exists:
@@ -28,17 +29,25 @@ def detect_services(url):
         return
 
     soup = BeautifulSoup(response.text, 'html.parser')
-    services = []
+    
+    services = soup.find_all(['h2', 'h3'], class_='service')
 
-    if soup.find('meta', {'name': 'generator', 'content': 'WordPress'}):
-        services.append('WordPress')
-    if soup.find('meta', {'name': 'generator', 'content': 'Drupal'}):
-        services.append('Drupal')
-    if 'phpMyAdmin' in response.text:
-        services.append('phpMyAdmin')
+    service_details = [service.get_text(strip=True) for service in services]
+    
+    print("Extracted services:")
+    for service in service_details:
+        print(service)
 
-    if services:
-        print(f"Detected services: {', '.join(services)}")
-    else:
-        print("No specific services detected.")
-                 
+    if save_file:
+        if save_directory:
+            save_path = os.path.join(save_directory, save_file)
+        else:
+            save_path = save_file
+
+        try:
+            with open(save_path, 'w', encoding='utf-8') as file:
+                file.write('\n'.join(service_details))
+            print(f"Service details saved to {save_path}")
+        except IOError as e:
+            print(f"Error saving the file: {e}")
+    
