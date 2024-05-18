@@ -5,10 +5,11 @@ import argparse
 from .scraper.scrape import scrape_onion_site
 from .scraper.directories import find_directories
 from .scraper.subdomains import find_subdomains
-from .scraper.services import detect_services
-from .scraper.links import extract_links
+from .scraper.html_extract import extract_html
 from .scraper.analyze import analyze_content
-from .scraper.download import download_files
+from .scraper.download import download_content
+from .scraper.links import find_links
+from .scraper.service import get_service_info
 
 def main():
     epilog_text = '''
@@ -16,18 +17,23 @@ def main():
 Copyright (c) 2024 author: Fidal
 Report an Issue : https://github.com/mr-fidal/torspy/issues
     '''
+    
+    epilog_text = '''
+Copyright (©️) 2024 author: Fidal
+Issue: https://GitHub.com/mr-fidal/torspy
+'''
     parser = argparse.ArgumentParser(description='Scrape a .onion site.', epilog=epilog_text,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('url', type=str, help='The .onion site URL to scrape')
     parser.add_argument('--find', type=str, help='The text to search for within the site')
     parser.add_argument('-s', '--save', type=str, help='The file name to save the content')
     parser.add_argument('-d', '--directory', type=str, help='The directory to save the file')
-    parser.add_argument('--dir', type=str, help='File containing list of directories to check')
-    parser.add_argument('--sub', type=str, help='File containing list of subdomains to check')
-    parser.add_argument('--services', action='store_true', help='Detect services running on the onion site')
-    parser.add_argument('--links', action='store_true', help='Extract all links from the onion site')
-    parser.add_argument('--analyze', action='store_true', help='Analyze the content of the onion site')
-    parser.add_argument('--download', type=str, help='Download specific types of files from the onion site')
+    parser.add_argument('--dir', type=str, help='The file containing directories to scan')
+    parser.add_argument('--sub', type=str, help='The file containing subdomains to scan')
+    parser.add_argument('--analyze', action='store_true', help='Analyze the content of the site')
+    parser.add_argument('--download', action='store_true', help='Download the content of the site')
+    parser.add_argument('--links', action='store_true', help='Find all links on the site')
+    parser.add_argument('--service', action='store_true', help='Get service info of the site')
     
     args = parser.parse_args()
 
@@ -35,19 +41,16 @@ Report an Issue : https://github.com/mr-fidal/torspy/issues
         find_directories(args.url, args.dir, args.save, args.directory)
     elif args.sub:
         find_subdomains(args.url, args.sub, args.save, args.directory)
-    elif args.services:
-        detect_services(args.url)
-    elif args.links:
-        extract_links(args.url)
     elif args.analyze:
         analyze_content(args.url)
     elif args.download:
-        download_files(args.url, args.download, args.directory)
+        download_content(args.url, args.save, args.directory)
+    elif args.links:
+        find_links(args.url)
+    elif args.service:
+        get_service_info(args.url)
     else:
         scrape_onion_site(args.url, args.find, args.save, args.directory)
 
 if __name__ == "__main__":
     main()
-    
-
-    
