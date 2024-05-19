@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+# Copyright (©️) 2024 author: Fidal
+# Issue : https://github.com/mr-fidal/torspy
+
 import requests
 from .tor_check import check_tor_running
 from .html_extract import check_onion_site
