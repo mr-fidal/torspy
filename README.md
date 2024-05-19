@@ -304,6 +304,10 @@ If you're interested in contributing to torspy, you can:
 - Suggest new features or enhancements.
 - Submit <a href="https://github.com/mr-fidal/torspy/pulls">pull requests</a> with improvements or fixes.
 
+### Thank You, TorSpy Users!
+
+We at TorSpy are incredibly grateful for your support and trust in our cybersecurity tool. Your feedback and engagement drive us to continually improve and enhance our service. Together, we're making the digital world a safer place. Thank you for being a part of the TorSpy community!
+
 ### Disclaimer
 ```
 This tool is intended for ethical use only. The author is not responsible for any misuse or damage caused by this tool. Users are responsible for ensuring their activities comply with all relevant laws and regulations.
