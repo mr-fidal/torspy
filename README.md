@@ -131,14 +131,14 @@ torspy http://example.onion --dir directories-list.txt
 - <b>This process may take some time</b>
 -	If you run the command above it will search for directories from the onion sites you provided
 
--	The command --dir stands for directories
+-	The command `--dir` stands for directories
 
 -	This command performs directories scanning on the .onion site using the list of directories provided in the `directories-list.txt` file.
 
 <b id="command-08">command 08</b>
 -	How to move all the lists of directories you got into another file
 ```sh
-torspy http://example.onion –dir directories-list.txt -s output.txt
+torspy http://example.onion -–dir directories-list.txt -s output.txt
 ```
 -	If you run the above command all the directory lists you get will be moved to another file
 
@@ -147,19 +147,19 @@ torspy http://example.onion –dir directories-list.txt -s output.txt
 <b id="command-09">command 09</b>
 - Command that finds subdomains in onion site
 ```sh
-torspy http://example.onion –sub subdomain-list.txt
+torspy http://example.onion –-sub subdomain-list.txt
 ```
 - <b>This process may take some time</b>
 -	If you run the command above it will search for subdomains from the onion sites you provided
 
--	The command –sub stands for subdomains 
+-	The command `--sub` stands for subdomains 
 
 -	This command performs subdomains scanning on the .onion site using the list of subdomains provided in the `subdomains-list.txt` file.
 
 <b id="command-10">command 10</b>
 -	How to move all the lists of subdomains you got into another file
 ```sh
-torspy http://example.onion –sub subdomain-list.txt -s output.txt
+torspy http://example.onion -–sub subdomain-list.txt -s output.txt
 ```
 -	If you run the above command all the subdomains lists you get will be moved to 
 
@@ -174,7 +174,7 @@ torspy http://example.onion –sub subdomain-list.txt -s output.txt
 torspy http://example.onion –-analyze
 ```
 - If you run the command above it will analyze the content of the onion site you provided.
-- The command –-analyze performs content analysis on the .onion site.
+- The command `–-analyze` performs content analysis on the .onion site.
 
 <b id="command-12">command 12</b>
 - How to transfer the analyzed data to a file
@@ -190,7 +190,7 @@ torspy http://example.onion –-analyze -s file-name.html
 torspy http://example.onion –-download -s filename
 ```
 - If you run the command above it will download the content of the onion site you provided and save it to the specified file.
-- The command –-download performs content downloading.
+- The command `–-download` performs content downloading.
 - example : torspy http://example.onion –-download -s index.html , torspy http://example.onion –-download -s data.jpg 
 - The command -s specifies the file name to save the downloaded content.
 
