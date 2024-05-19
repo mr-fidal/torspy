@@ -54,7 +54,7 @@ torspy http://example.onion -s file.html
 
 -	Also you can change the name of file.html to any name of your choice
 
-<b>command 3</b>
+<b id="command-03">command 03</b>
 
 - How to move this file to a directory of your choice
 ```sh
@@ -64,7 +64,7 @@ torspy http://example.onion -s file.html -d /path/home/
 
 -	Given after -d is your path and if you run the above command your file will move to the given path
 
-<b>command 4</b>
+<b id="command-04">command 04</b>
 -	Search only the content you need from Onion sites
 ```sh
 torspy http://example.onion –find “search query”
@@ -73,14 +73,14 @@ torspy http://example.onion –find “search query”
 
 -	The command --find means to search
 
-<b>command 5</b>
+<b id="command-05">command 05</b>
 - -	To search for specific text within the content and save the results to a file
 ```sh
 torspy http://example.onion –find “search query” -s search_results.html
 ```
 -	If you enter the above command it will search for the content you need from the site you provided and then transfer all that content to another file.
 
-<b>command 6</b>
+<b id="command-06">command 06</b>
 -	How to search for content and move it to another directory
 ```sh
 torspy http://example.onion –find “important information” -s results.html -d /path/to/directory
@@ -91,7 +91,7 @@ torspy http://example.onion –find “important information” -s results.html 
 - important <b>Remember that when trying to find subdomains, as well as trying to find directories, the success rate is only 20%.</b>
 - Finding directories and subdomains for onion sites is more challenging than for regular websites because onion sites are part of the dark web, which is intentionally designed to be less accessible and more private.
 
-<b>command 7</b>
+<b id="command-07">command 07</b>
 
 -	Command that finds the directories on the onion site
 ```sh
@@ -104,7 +104,7 @@ torspy http://example.onion --dir directories-list.txt
 
 -	This command performs directories scanning on the .onion site using the list of directories provided in the `directories-list.txt` file.
 
-<b>command 8</b>
+<b id="command-08">command 08</b>
 -	How to move all the lists of directories you got into another file
 ```sh
 torspy http://example.onion –dir directories-list.txt -s output.txt
@@ -113,7 +113,7 @@ torspy http://example.onion –dir directories-list.txt -s output.txt
 
 -	Also you can move this file to other directory or other path using -d command
 
-<b>command 9</b>
+<b id="command-09">command 09</b>
 - Command that finds subdomains in onion site
 ```sh
 torspy http://example.onion –sub subdomain-list.txt
@@ -125,7 +125,7 @@ torspy http://example.onion –sub subdomain-list.txt
 
 -	This command performs subdomains scanning on the .onion site using the list of subdomains provided in the `subdomains-list.txt` file.
 
-<b>command 10</b>
+<b id="command-10">command 10</b>
 -	How to move all the lists of subdomains you got into another file
 ```sh
 torspy http://example.onion –sub subdomain-list.txt -s output.txt
@@ -136,7 +136,7 @@ torspy http://example.onion –sub subdomain-list.txt -s output.txt
 
 -	Also you can move this file to other directory or other path using -d command
 -	
-<b>command 11</b>
+<b id="command-11">command 11</b>
 
 - For more information on available options, you can use the `--help` flag:
 ```sh
