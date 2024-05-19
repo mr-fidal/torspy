@@ -58,6 +58,12 @@
 
 
 <b>When using torspy tool you must use Tor otherwise it won't work : $ tor</b>
+
+## Coding 
+
+- Python : <a href="https://github.com/mr-fidal/torspy/blob/main/coding/python.md">Link</a>
+- Bash : <a href="https://github.com/mr-fidal/torspy/blob/main/coding/bash.md">Link</a>
+
 ## Installation
 
 You can install torspy via pip:
