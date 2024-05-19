@@ -215,6 +215,7 @@ $ torspy http://example.onion –-service
 - If you run the command above it will retrieve service info of the onion site you provided.
 - The command –-service performs service information retrieval.
 - You can use -s to save
+
 <b id="command-17">command 17</b>
 
 - For more information on available options, you can use the `--help` flag:
