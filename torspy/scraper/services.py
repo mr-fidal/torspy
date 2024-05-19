@@ -1,13 +1,9 @@
-#!/usr/bin/python3
-# copyright ©️ 2024 author Fidal
-# Issue : https://github.com/mr-fidal/torspy
-
 import requests
-from bs4 import BeautifulSoup
 from .tor_check import check_tor_running
 from .html_extract import check_onion_site
+import os
 
-def get_service_info(url, save_file=None):
+def get_service_info(url, save_file=None, directory=None):
     check_tor_running()
     site_exists, message = check_onion_site(url)
     if not site_exists:
@@ -27,19 +23,17 @@ def get_service_info(url, save_file=None):
         print(f"Error fetching the page: {e}")
         return
 
-    soup = BeautifulSoup(response.text, 'html.parser')
+    headers = response.headers
+    server_info = headers.get('Server', 'Unknown')
 
-    service_info = []
-    for script in soup.find_all('script'):
-        if 'service' in script.text.lower():
-            service_info.append(script.text.strip())
-
-    print("Extracted services:")
-    for info in service_info:
-        print(info)
+    extracted_services = f"Extracted services:\nServer: {server_info}"
+    print(extracted_services)
 
     if save_file:
-        with open(save_file, 'w', encoding='utf-8') as f:
-            for info in service_info:
-                f.write(info + "\n")
-        print(f"Services saved to {save_file}")
+        if directory:
+            save_path = os.path.join(directory, save_file)
+        else:
+            save_path = save_file
+        with open(save_path, 'w', encoding='utf-8') as f:
+            f.write(extracted_services)
+        print(f"Service information saved to {save_path}")
