@@ -1,3 +1,9 @@
+- You can install torspy via pip:
+
+```sh
+pip install torspy
+```
+
 ### 1. Viewing HTML of a .onion Page
 ```sh
 #!/bin/bash
