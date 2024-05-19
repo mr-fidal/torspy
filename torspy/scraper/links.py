@@ -1,14 +1,10 @@
-#!/usr/bin/python3
-# copyright ©️ 2024 author Fidal
-# Issue : https://github.com/mr-fidal/torspy
-
 import requests
 from bs4 import BeautifulSoup
-from urllib.parse import urljoin
 from .tor_check import check_tor_running
 from .html_extract import check_onion_site
+import os
 
-def find_links(url, save_file=None):
+def find_links(url, save_file=None, directory=None):
     check_tor_running()
     site_exists, message = check_onion_site(url)
     if not site_exists:
@@ -29,18 +25,17 @@ def find_links(url, save_file=None):
         return
 
     soup = BeautifulSoup(response.text, 'html.parser')
-    links = set()
-    
-    for link in soup.find_all('a', href=True):
-        full_url = urljoin(url, link['href'])
-        links.add(full_url)
+    links = set(a['href'] for a in soup.find_all('a', href=True))
+    formatted_links = [f"Link: {url}{link}" if link.startswith('/') else f"Link: {link}" for link in links]
 
-    print("Found links:")
-    for link in links:
-        print(f"Link: {link}")
+    for link in formatted_links:
+        print(link)
 
     if save_file:
-        with open(save_file, 'w') as f:
-            for link in links:
-                f.write(f"Link: {link}\n")
-        print(f"Links saved to {save_file}")
+        if directory:
+            save_path = os.path.join(directory, save_file)
+        else:
+            save_path = save_file
+        with open(save_path, 'w', encoding='utf-8') as f:
+            f.write('\n'.join(formatted_links))
+        print(f"Links saved to {save_path}")
