@@ -52,8 +52,8 @@ def find_directories(url, dir_file, save_file=None, save_directory=None):
                 "users.db" in response.text or "web.db" in response.text or 
                 "customer.db" in response.text or "inventory.db" in response.text
             ):
-                found_directories.append(test_url)
-                print(f"Found: {test_url}")
+                found_directories.append(f"Link: {test_url}")
+                print(f"Link: {test_url}")
         except requests.RequestException:
             continue
 
@@ -75,3 +75,4 @@ def find_directories(url, dir_file, save_file=None, save_directory=None):
                 print(f"Error saving the file: {e}")
     else:
         print("\nNo directories found.")
+    
