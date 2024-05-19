@@ -4,23 +4,23 @@
 
 ### Index
 
-* [Command 01](#command-01)
-* [Command 02](#command-02)
-* [Command 03](#command-03)
-* [Command 04](#command-04)
-* [Command 05](#command-05)
-* [Command 06](#command-06)
-* [Command 07](#command-07)
-* [Command 08](#command-08)
-* [Command 09](#command-09)
-* [Command 10](#command-10)
-* [Command 11](#command-11)
-* [Command 12](#command-12)
-* [Command 13](#command-13)
-* [Command 14](#command-14)
-* [Command 15](#command-15)
-* [Command 16](#command-16)
-* [Command 17](#command-17)
+* [Command 01 How to view the HTML of a page on the Onion site](#command-01)
+* [Command 02 How to clone an entire page and save it to a file](#command-02)
+* [Command 03 How to move files into directory](#command-03)
+* [Command 04 To search for content](#command-04)
+* [Command 05 Search content and save file](#command-05)
+* [Command 06 Search content and save file -d path](#command-06)
+* [Command 07 directories](#command-07)
+* [Command 08 directories and file](#command-08)
+* [Command 09 subdomain](#command-09)
+* [Command 10 subdomain and file](#command-10)
+* [Command 11 analyzes](#command-11)
+* [Command 12 How to transfer the analyzed data to a file](#command-12)
+* [Command 13 downloads content from an onion site](#command-13)
+* [Command 14 finds links on an onion site](#command-14)
+* [Command 15 Command to convert all links into one file](#command-15)
+* [Command 16 gets service info of an onion site](#command-16)
+* [Command 17 help](#command-17)
 
 ### Advantages
 -	torspy is easy to use
@@ -166,8 +166,52 @@ torspy http://example.onion –sub subdomain-list.txt -s output.txt
 -	another file
 
 -	Also you can move this file to other directory or other path using -d command
--	
+
 <b id="command-11">command 11</b>
+
+- Command that analyzes content of an onion site
+```sh
+torspy http://example.onion –-analyze
+```
+- If you run the command above it will analyze the content of the onion site you provided.
+- The command –-analyze performs content analysis on the .onion site.
+
+<b id="command-12">command 12</b>
+- How to transfer the analyzed data to a file
+```sh
+torspy http://example.onion –-analyze -s file-name.html
+```
+- You can name the file whatever you want { chnage file-name.html }
+
+<b id="command-13">command 13</b>
+
+- Command that downloads content from an onion site
+$ torspy http://example.onion –-download -s filename
+- If you run the command above it will download the content of the onion site you provided and save it to the specified file.
+- The command –-download performs content downloading.
+- example : torspy http://example.onion –-download -s index.html , torspy http://example.onion –-download -s data.jpg 
+- The command -s specifies the file name to save the downloaded content.
+
+<b id="command-14">command 14</b>
+- Command that finds links on an onion site
+$ torspy http://example.onion –-links
+- If you run the command above it will find all links on the onion site you provided.
+- The command –-links performs link extraction.
+
+<b id="command-15">command 15</b>
+- Command to convert all links into one file
+```sh
+torspy http://example.onion –-links -s file-link.txt
+```
+- After running the above command all the links will be changed to the file you have given
+
+<b id="command-16">command 16</b>
+- Command that gets service info of an onion site
+$ torspy http://example.onion –-service
+- If you run the command above it will retrieve service info of the onion site you provided.
+- The command –-service performs service information retrieval.
+- You can use -s to save
+<b id="command-17">command 17</b>
 
 - For more information on available options, you can use the `--help` flag:
 ```sh
