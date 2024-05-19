@@ -298,9 +298,9 @@ torspy utilizes the following process to interact with .onion sites:
 ### Contributing to torspy
 If you're interested in contributing to torspy, you can:
 
-- Report issues encountered while using torspy.
+- Report issues encountered while using <a href="https://github.com/mr-fidal/torspy/issues">torspy</a>.
 - Suggest new features or enhancements.
-- Submit pull requests with improvements or fixes.
+- Submit <a href="https://github.com/mr-fidal/torspy/pulls">pull requests</a> with improvements or fixes.
 
 ### Disclaimer
 ```
