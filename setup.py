@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name='torspy',
-    version='2.0.0',
+    version='2.0.1',
     author='Fidal',
     author_email='mrfidal@proton.me',
     description='torspy is a Python package for exploring .onion sites via Tor. It scrapes HTML content, localizes text, and detects hidden directories. With subdomain scanning, torspy enables thorough reconnaissance.',
