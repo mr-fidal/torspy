@@ -9,7 +9,7 @@ from .scraper.html_extract import extract_html
 from .scraper.analyze import analyze_content
 from .scraper.download import download_content
 from .scraper.links import find_links
-from .scraper.service import get_service_info
+from .scraper.services import get_service_info 
 
 def main():
     epilog_text = '''
@@ -17,7 +17,7 @@ def main():
 Copyright (c) 2024 author: Fidal
 Report an Issue : https://github.com/mr-fidal/torspy/issues
     '''
-    
+
     parser = argparse.ArgumentParser(description='Scrape a .onion site.', epilog=epilog_text,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('url', type=str, help='The .onion site URL to scrape')
@@ -30,7 +30,7 @@ Report an Issue : https://github.com/mr-fidal/torspy/issues
     parser.add_argument('--download', action='store_true', help='Download the content of the site')
     parser.add_argument('--links', action='store_true', help='Find all links on the site')
     parser.add_argument('--service', action='store_true', help='Get service info of the site')
-    
+
     args = parser.parse_args()
 
     if args.dir:
@@ -42,9 +42,9 @@ Report an Issue : https://github.com/mr-fidal/torspy/issues
     elif args.download:
         download_content(args.url, args.save, args.directory)
     elif args.links:
-        find_links(args.url)
+        find_links(args.url, args.save, args.directory)  
     elif args.service:
-        get_service_info(args.url)
+        get_service_info(args.url, args.save) 
     else:
         scrape_onion_site(args.url, args.find, args.save, args.directory)
 
