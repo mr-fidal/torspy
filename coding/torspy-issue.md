@@ -66,3 +66,7 @@
 **Solution:**
 - Ensure the .onion site you are trying to access is up and reachable.
 - Verify the URL and try accessing it again after some time.
+
+#### Issues 
+
+- Report an issue : <a href="https://github.com/mr-fidal/torspy/issues">Click</a>
