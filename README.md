@@ -42,6 +42,7 @@
 - Finding services from onion sites
 - Download files from onion sites
 - Analyzing onion sites
+-<b> torspy is the leading package for dark web scraping.</b>
 
 ### Disadvantages
 
