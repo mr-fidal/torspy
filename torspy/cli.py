@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-# copyright ©️ 2024 author Fidal
+# Copyright (©️) 2024 author: Fidal
+# Issue : https://github.com/mr-fidal/torspy
 
 import argparse
 from .scraper.scrape import scrape_onion_site
