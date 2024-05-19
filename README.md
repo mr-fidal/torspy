@@ -186,7 +186,9 @@ torspy http://example.onion –-analyze -s file-name.html
 <b id="command-13">command 13</b>
 
 - Command that downloads content from an onion site
-$ torspy http://example.onion –-download -s filename
+```sh
+torspy http://example.onion –-download -s filename
+```
 - If you run the command above it will download the content of the onion site you provided and save it to the specified file.
 - The command –-download performs content downloading.
 - example : torspy http://example.onion –-download -s index.html , torspy http://example.onion –-download -s data.jpg 
@@ -194,7 +196,9 @@ $ torspy http://example.onion –-download -s filename
 
 <b id="command-14">command 14</b>
 - Command that finds links on an onion site
-$ torspy http://example.onion –-links
+```sh
+torspy http://example.onion –-links
+```
 - If you run the command above it will find all links on the onion site you provided.
 - The command –-links performs link extraction.
 
