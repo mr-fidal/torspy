@@ -100,7 +100,7 @@ torspy http://example.onion -s file.html -d /path/home/
 <b id="command-04">command 04</b>
 -	Search only the content you need from Onion sites
 ```sh
-torspy http://example.onion –find “search query”
+torspy http://example.onion --find “search query”
 ```
 -	If you enter the above command it will search only the content you need from the given onion site and print it. 
 
@@ -109,14 +109,14 @@ torspy http://example.onion –find “search query”
 <b id="command-05">command 05</b>
 - -	To search for specific text within the content and save the results to a file
 ```sh
-torspy http://example.onion –find “search query” -s search_results.html
+torspy http://example.onion --find “search query” -s search_results.html
 ```
 -	If you enter the above command it will search for the content you need from the site you provided and then transfer all that content to another file.
 
 <b id="command-06">command 06</b>
 -	How to search for content and move it to another directory
 ```sh
-torspy http://example.onion –find “important information” -s results.html -d /path/to/directory
+torspy http://example.onion --find “important information” -s results.html -d /path/to/directory
 ```
 -	If you run the above command it will search for the content you need from the given onion site and then move it to a file and then move it to the directory you specified.
 
@@ -140,7 +140,7 @@ torspy http://example.onion --dir directories-list.txt
 <b id="command-08">command 08</b>
 -	How to move all the lists of directories you got into another file
 ```sh
-torspy http://example.onion -–dir directories-list.txt -s output.txt
+torspy http://example.onion --dir directories-list.txt -s output.txt
 ```
 -	If you run the above command all the directory lists you get will be moved to another file
 
@@ -149,7 +149,7 @@ torspy http://example.onion -–dir directories-list.txt -s output.txt
 <b id="command-09">command 09</b>
 - Command that finds subdomains in onion site
 ```sh
-torspy http://example.onion –-sub subdomain-list.txt
+torspy http://example.onion --sub subdomain-list.txt
 ```
 - <b>This process may take some time</b>
 -	If you run the command above it will search for subdomains from the onion sites you provided
@@ -161,7 +161,7 @@ torspy http://example.onion –-sub subdomain-list.txt
 <b id="command-10">command 10</b>
 -	How to move all the lists of subdomains you got into another file
 ```sh
-torspy http://example.onion -–sub subdomain-list.txt -s output.txt
+torspy http://example.onion --sub subdomain-list.txt -s output.txt
 ```
 -	If you run the above command all the subdomains lists you get will be moved to 
 
@@ -173,7 +173,7 @@ torspy http://example.onion -–sub subdomain-list.txt -s output.txt
 
 - Command that analyzes content of an onion site
 ```sh
-torspy http://example.onion –-analyze
+torspy http://example.onion --analyze
 ```
 - If you run the command above it will analyze the content of the onion site you provided.
 - The command `–-analyze` performs content analysis on the .onion site.
@@ -181,7 +181,7 @@ torspy http://example.onion –-analyze
 <b id="command-12">command 12</b>
 - How to transfer the analyzed data to a file
 ```sh
-torspy http://example.onion –-analyze -s file-name.html
+torspy http://example.onion --analyze -s file-name.html
 ```
 - You can name the file whatever you want { chnage file-name.html }
 
@@ -189,7 +189,7 @@ torspy http://example.onion –-analyze -s file-name.html
 
 - Command that downloads content from an onion site
 ```sh
-torspy http://example.onion –-download -s filename
+torspy http://example.onion --download -s filename
 ```
 - If you run the command above it will download the content of the onion site you provided and save it to the specified file.
 - The command `–-download` performs content downloading.
@@ -199,7 +199,7 @@ torspy http://example.onion –-download -s filename
 <b id="command-14">command 14</b>
 - Command that finds links on an onion site
 ```sh
-torspy http://example.onion –-links
+torspy http://example.onion --links
 ```
 - If you run the command above it will find all links on the onion site you provided.
 - The command –-links performs link extraction.
@@ -207,14 +207,14 @@ torspy http://example.onion –-links
 <b id="command-15">command 15</b>
 - Command to convert all links into one file
 ```sh
-torspy http://example.onion –-links -s file-link.txt
+torspy http://example.onion --links -s file-link.txt
 ```
 - After running the above command all the links will be changed to the file you have given
 
 <b id="command-16">command 16</b>
 - Command that gets service info of an onion site
 ```sh
-torspy http://example.onion –-service
+torspy http://example.onion --service
 ```
 - If you run the command above it will retrieve service info of the onion site you provided.
 - The command –-service performs service information retrieval.
