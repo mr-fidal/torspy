@@ -211,7 +211,9 @@ torspy http://example.onion –-links -s file-link.txt
 
 <b id="command-16">command 16</b>
 - Command that gets service info of an onion site
-$ torspy http://example.onion –-service
+```sh
+torspy http://example.onion –-service
+```
 - If you run the command above it will retrieve service info of the onion site you provided.
 - The command –-service performs service information retrieval.
 - You can use -s to save
