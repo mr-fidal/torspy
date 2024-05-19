@@ -2,6 +2,26 @@
 
 <b>torspy</b> is a robust Python package fortified with powerful algorithms, designed for seamless exploration of .onion sites via the Tor network. Its arsenal includes adept scraping of HTML from .onion URLs, precise text localization within the acquired content, and proficient storage of findings. Moreover, torspy boasts formidable subdomain scanning capabilities, enabling thorough reconnaissance across diverse subdomains. Additionally, it excels at detecting hidden directories, further enhancing its efficacy in navigating and extracting valuable information from the depths of the dark web.
 
+### Index
+
+* [Command 01](#command-01)
+* [Command 02](#command-02)
+* [Command 03](#command-03)
+* [Command 04](#command-04)
+* [Command 05](#command-05)
+* [Command 06](#command-06)
+* [Command 07](#command-07)
+* [Command 08](#command-08)
+* [Command 09](#command-09)
+* [Command 10](#command-10)
+* [Command 11](#command-11)
+* [Command 12](#command-12)
+* [Command 13](#command-13)
+* [Command 14](#command-14)
+* [Command 15](#command-15)
+* [Command 16](#command-16)
+* [Command 17](#command-17)
+
 <i>After waiting for a few days more commands will be added</i>
 
 <b>When using torspy tool you must use Tor otherwise it won't work : $ tor</b>
@@ -16,14 +36,14 @@ pip install torspy
 ### Command-Line Interface
 torspy allows you to interact with .onion sites from the command line:
 
-<b>Command 1</b>
+<b id="command-01">Command 01</b>
 - To display the content of a .onion site:
 ```sh
 torspy http://example.onion
 ```
 -	When the above command is run, a request goes through the Tor network to that onion site, and then the HTML page of the onion site is displayed on your terminal.
 
-<b>command 2</b>
+<b id="command-02">command 02</b>
 - To save the displayed content to a file:
 ```sh
 torspy http://example.onion -s file.html
