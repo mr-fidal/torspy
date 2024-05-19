@@ -38,13 +38,13 @@ Report an Issue : https://github.com/mr-fidal/torspy/issues
     elif args.sub:
         find_subdomains(args.url, args.sub, args.save, args.directory)
     elif args.analyze:
-        analyze_content(args.url)
+        analyze_content(args.url, args.save, args.directory)
     elif args.download:
         download_content(args.url, args.save, args.directory)
     elif args.links:
-        find_links(args.url, args.save, args.directory)  
+        find_links(args.url, args.save, args.directory)
     elif args.service:
-        get_service_info(args.url, args.save) 
+        get_service_info(args.url, args.save, args.directory)
     else:
         scrape_onion_site(args.url, args.find, args.save, args.directory)
 
