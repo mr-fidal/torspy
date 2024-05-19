@@ -22,6 +22,37 @@
 * [Command 16](#command-16)
 * [Command 17](#command-17)
 
+### Advantages
+-	torspy is easy to use
+
+-	Many hidden directories can be found using torspy
+
+-	Each request torspy makes for your purpose will be anonymous
+
+-	torspy can be used to extract required text or content from the website
+
+-	HTML files can be downloaded using torspy
+
+-	With torspy  you can search for the files you need
+
+-	torspy is the leading package for dark web scraping.
+
+- Finding links from onion sites
+
+- Finding services from onion sites
+- Download files from onion sites
+- Analyzing onion sites
+
+### Disadvantages
+
+-	Since requests are made using the Tor network, this tool will run slowly
+
+-	The probability of finding hidden directories, subdomains and files is less than 20% 
+
+-	Sometimes you have to wait some time for this tool to work 
+
+- Some processes may take time to complete
+
 <i>After waiting for a few days more commands will be added</i>
 
 <b>When using torspy tool you must use Tor otherwise it won't work : $ tor</b>
