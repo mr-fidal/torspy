@@ -18,3 +18,6 @@ def check_tor_running():
     except Exception as e:
         print("Error : Tor is not running or not properly configured. Please start Tor and try again.")
         sys.exit(1)
+
+def is_onion_url(url):
+    return url.endswith('.onion')
