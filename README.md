@@ -2,7 +2,7 @@
 
 <img src="https://img.myindianhub.com/other/spyder.jpg">
 
-<b>torspy</b> is a robust Python package fortified with powerful algorithms, designed for seamless exploration of .onion sites via the Tor network. Its arsenal includes adept scraping of HTML from .onion URLs, precise text localization within the acquired content, and proficient storage of findings. Moreover, torspy boasts formidable subdomain scanning capabilities, enabling thorough reconnaissance across diverse subdomains. Additionally, it excels at detecting hidden directories, further enhancing its efficacy in navigating and extracting valuable information from the depths of the dark web. Torspy also features advanced content analysis, comprehensive link extraction, detailed service information retrieval, and efficient content downloading, making it an indispensable tool for deep web exploration and analysis.
+<b>torspy</b> is a robust Python package fortified with powerful algorithms, designed for seamless exploration of websites, including both normal and .onion sites via the Tor network. Its arsenal includes adept scraping of HTML from URLs, precise text localization within the acquired content, and proficient storage of findings. Moreover, <b>torspy</b> boasts formidable subdomain scanning capabilities, enabling thorough reconnaissance across diverse subdomains. Additionally, it excels at detecting hidden directories, further enhancing its efficacy in navigating and extracting valuable information from the web. <b>torspy</b> also features advanced content analysis, comprehensive link extraction, detailed service information retrieval, and efficient content downloading, making it an indispensable tool for web exploration and analysis.
 
 ### Index
 
