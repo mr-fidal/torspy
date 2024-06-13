@@ -1,5 +1,15 @@
 # torspy
 
+![GitHub](https://img.shields.io/github/license/mr-fidal/torspy)
+![GitHub last commit](https://img.shields.io/github/last-commit/mr-fidal/torspy)
+![PyPI](https://img.shields.io/pypi/v/torspy)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/torspy)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/torspy)
+<!-- ![GitHub stars](https://img.shields.io/github/stars/mr-fidal/torspy?style=social)
+ ![GitHub forks](https://img.shields.io/github/forks/mr-fidal/torspy?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/mr-fidal/torspy?style=social) -->
+
+
 <img src="https://img.myindianhub.com/other/spyder.jpg">
 
 <b>torspy</b> is a robust Python package fortified with powerful algorithms, designed for seamless exploration of websites, including both normal and .onion sites via the Tor network. Its arsenal includes adept scraping of HTML from URLs, precise text localization within the acquired content, and proficient storage of findings. Moreover, <b>torspy</b> boasts formidable subdomain scanning capabilities, enabling thorough reconnaissance across diverse subdomains. Additionally, it excels at detecting hidden directories, further enhancing its efficacy in navigating and extracting valuable information from the web. <b>torspy</b> also features advanced content analysis, comprehensive link extraction, detailed service information retrieval, and efficient content downloading, making it an indispensable tool for web exploration and analysis.
